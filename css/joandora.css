@@ -1,112 +1,118 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto&display=swap');
 
-* {
+body, h1, h2, h3, p, ul, figure {
     margin: 0;
     padding: 0;
 }
 
-ul {
-    list-style: none;
+li { list-style: none; }
+a { text-decoration: none; }
+address { font-style: normal; }
+small { font-size: 1em; }
+.hidden { position:absolute; left: -9999px; }
+/* 웹폰트 */
+
+body {
+    font-family: 'Noto Sans KR','Roboto', sans-serif;
+    /* width: 720px; margin: 0 auto; */
+    background: #b8dbf8;
 }
 
-a {
-    text-decoration: none;
-}
-
-.hidden {
-    display: none;
-}
-
-small {
+h1 {
     text-transform: capitalize;
 }
 
-address {
-    font-style: normal;
-}
-
-body {
-    margin: 0 auto;
-    background: paleturquoise;
-    min-width: 700px;
-    max-width: 960px;
+/* 헤더 */
+#header {
+    background: url(../images/bg.jpg) no-repeat left/cover;
+    height: 600px;
     position: relative;
 }
 
-#header {
-    height: 300px;
-    background: url(../images/bg.png) no-repeat center /cover;
-    /* padding: 150px 10px 10px 0px;
-    box-sizing: border-box; */
-}
-
-#header hgroup {
+#header .hgroup {
+    /* position: absolute;
+    bottom: 25px;
+    right: 30px; */
+    text-align: center;
+    padding-top:300px;
+    box-sizing: border-box;
     color: #fff;
-    position: absolute;
-    top: 150px;
-    right: 20px;
 }
-
 #header h1 {
     font-size: 40px;
-    text-shadow: 2px 2px 2px #000;
+    text-shadow: 2px 2px 1px #000;
+}
+#header h1 a {
+    color: #fff;
 }
 
 #header h2 {
+    font-size: 1em;
+    font-weight: lighter;
     text-shadow: 1px 1px 1px #000;
-    font-size: 16px;
-    margin-top: 30px;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+/* gnb */
+#gnb {
+    height: 60px;
+    /* 선택사항. 안적어줘도 된다. */
 }
 
 #gnb ul li {
     float: left;
-    text-align: center;
     width: 25%;
+    /* height: 60px; */
 }
 
 #gnb ul li a {
-    color: #fff;
     display: block;
-    background: #003057;
-    /* border: 1px solid black; */
-    line-height: 70px;
+    height: 60px;
+    /* line-height가 적용 안되는 사이트를 쓸 수도 있기 떄문에 일단 사용 */
+    background: #036;
     text-align: center;
+    color: #fff;
+    line-height: 60px;
 }
 #gnb ul li a:hover {
-    color: #003057;
+    background: #fff;
+    color: #036;
+    font-weight: bold;
+}
+#gnb ul li.on a {
+    background: #fff;
+    color: #036;
+    font-weight: bold;
+}
+/* 메인 */
+#content {
+    padding: 20px 10px;
     background: #fff;
 }
 
-#contents {
-    background: #fff;
+#content article h3 {
+    margin: 20px 0; 
 }
 
-#contents h2 {
-    text-indent: 10px;
-    line-height: 70px;
+#content article figure {
+    margin-left: 40px;
 }
 
-#contents article h3 {
-    text-indent: 10px;
-}
-
-#contents article figure {
-    margin: 0 auto;
-    width: 600px;
-    padding-bottom: 10px;
-}
-
-#contents article figure {
-    white-space: nowrap;
+#content figure:nth-of-type(2) {
+    margin-top: 20px;
 }
 
 #footer {
+    padding: 30px 0 10px;
+    background: #030; color: #fff;
     text-align: center;
-    background: #003d00;
-    color: #fff;
-    padding: 10px 0;
 }
 
-#footer p {
-    line-height: 50px;
+#footer p { 
+    margin-bottom: 15px;
+}
+
+#footer small {
+    text-transform: capitalize;
 }
